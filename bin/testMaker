@@ -1,0 +1,46 @@
+#!/usr/bin/env perl
+
+# ABSTRACT: Create test class classes from your existing lib/
+# PODNAME: testMaker
+
+use lib 'lib/';
+
+use strict;
+use warnings;
+use Getopt::Std;
+use TestMaker;
+
+my $opts = {};
+getopts('ft', $opts);
+
+my $maker = TestMaker->new();
+
+$maker->checkForModules() unless $opts->{f};
+$maker->createTestBase() unless $opts->{t};
+
+$maker->createTests();
+
+__END__
+
+=pod
+
+=head1 NAME
+
+testMaker - Create test class classes from your existing lib/
+
+=head1 VERSION
+
+version 1.1
+
+=head1 AUTHOR
+
+Tom Beresford <me at tomberesford dot co dot uk>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by Tom Beresford.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut

@@ -1,0 +1,13 @@
+Revision history for testMaker
+
+1.1    June 13, 2013
+    - Finds its own modules on which to act, rather than rather than requiring input data
+    - Creates a Test::Class test runner
+    - Creates a base test class to inherit startup require checks
+    - Checks to see that the moduels required to run the tests
+    - Added pod
+    - Updated so that prototyped subs can be worked on
+    - Split into more testable structure
+
+1.0    June 12, 2013
+    - Initial version - hacky script
